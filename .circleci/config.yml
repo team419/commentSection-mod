@@ -1,0 +1,10 @@
+version:2
+jobs:
+  buikd:
+    working_directory: ~/tmp
+    docker:
+      - image: circleci/node:7
+    setps:
+      - checkout
+      - run: npm install
+      - run: npm test
