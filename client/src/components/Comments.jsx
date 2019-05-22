@@ -30,7 +30,6 @@ class Comments extends React.Component {
       <div id="container">
         <User />
         <OnHover />
-        {/* < CommmentsList /> */}
       </div>
     );
 

@@ -1,5 +1,5 @@
 import React from "react";
-// import temp from "../../../pictures/tempAvator.jpg";
+
 class User extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +16,7 @@ class User extends React.Component {
         </div>
         <div className="userPro">
           <div className="userName">
-            <span>Daniels L.</span>
+            <span>Daniel L.</span>
           </div>
           <div className="location">San Francisco, Ca</div>
           <ul className="userInfo">

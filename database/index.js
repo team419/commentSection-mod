@@ -43,7 +43,7 @@ Review.insertMany(user, function(error) {
   if (error) {
     console.log("error", error);
   } else {
-    console.log("sucessfully seeded");
+    console.log("sucessfully seededs");
   }
 });
 var getComments = (restaurantId, callback) => {
