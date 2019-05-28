@@ -1,5 +1,5 @@
 import React from "react";
-class CommentsUser extends React.Component {
+export default class CommentsUser extends React.Component {
   constructor() {
     super();
   }
