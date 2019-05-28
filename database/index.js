@@ -3,7 +3,7 @@ mongoose.connect("mongodb://localhost/reviews", { useNewUrlParser: true });
 const faker = require("faker");
 
 let reviewSchema = mongoose.Schema({
-  restaurantId: Number,
+  // restaurantId: Number,
   name: String,
   location: String,
   numFriends: Number,
@@ -20,18 +20,18 @@ const Review = mongoose.model("Review", reviewSchema);
 
 let user = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 5; i++) {
   let userInfo = {
-    restaurantId: i,
+    // restaurantId: i,
     name: faker.name.findName(),
-    location: faker.address.city(),
+    location: `${faker.address.city()} ${faker.address.stateAbbr()}`,
     numFriends: faker.random.number({ min: 1, max: 500 }),
     numReviews: faker.random.number({ min: 1, max: 500 }),
     numPhotos: faker.random.number({ min: 1, max: 501 }),
     elite: faker.random.boolean(),
     stars: faker.random.number({ min: 1, max: 5 }),
     date: faker.date.between("2015-01-01", "2019-01-05"),
-    comments: faker.lorem.sentences({ min: 3, max: 30 }),
+    comments: faker.lorem.sentences(7),
     userPicture: faker.image.avatar(),
     checkIn: faker.random.boolean()
   };
@@ -50,7 +50,7 @@ var getComments = (restaurantId, callback) => {
   Review.findOne({}, (err, data) => {
     console.log(err, data);
   });
-  Review.find({ restaurantId: restaurantId }, (err, results) => {
+  Review.find({}, (err, results) => {
     if (err) {
       callback(err, null);
     } else {

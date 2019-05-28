@@ -8,7 +8,7 @@ let app = express();
 app.use(express.static(__dirname + "/../client/dist/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/review_id/:id", (req, res) => {
+app.get("/review_id/", (req, res) => {
   const restaurantId = req.params.id;
 
   db.getComments(restaurantId, (err, results) => {
@@ -16,6 +16,7 @@ app.get("/review_id/:id", (req, res) => {
     if (err) {
       console.log("err");
     } else {
+      console.log(results);
       res.status(200).send(results);
       console.log("successful GETs");
     }
