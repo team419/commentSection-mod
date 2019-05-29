@@ -37,7 +37,6 @@ for (let i = 0; i < 5; i++) {
   };
   user.push(userInfo);
 }
-// console.log(user);
 
 Review.insertMany(user, function(error) {
   if (error) {

@@ -40,7 +40,9 @@ export default class HelpfulBtn extends React.Component {
         <div className={css["thankYou"]}>{this.state.value}</div>
         <button
           type="submit"
-          className={this.state.buttonUsefull ? "buttonTrue" : "buttonFalse"}
+          className={
+            this.state.buttonUsefull ? css["buttonTrue"] : css["buttonFalse"]
+          }
           onClick={this.handleClickUseful}
         >
           <span className={css["stypleButton"]}>
@@ -52,7 +54,9 @@ export default class HelpfulBtn extends React.Component {
         </button>
         <button
           type="submit"
-          className={this.state.buttonFunny ? "buttonTrue" : "buttonFalse"}
+          className={
+            this.state.buttonFunny ? css["buttonTrue"] : css["buttonFalse"]
+          }
           onClick={this.handleClickFunny}
         >
           <span className={css["styleButton"]}>
@@ -64,7 +68,9 @@ export default class HelpfulBtn extends React.Component {
         </button>
         <button
           type="submit"
-          className={this.state.buttonCool ? "buttonTrue" : "buttonFalse"}
+          className={
+            this.state.buttonCool ? css["buttonTrue"] : css["buttonFalse"]
+          }
           onClick={this.handleClickCool}
         >
           <span className={css["styleButton"]}>

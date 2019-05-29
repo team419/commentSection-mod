@@ -1,11 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("../database/index.js");
-// const cors = require("cors");
+
 let app = express();
 
-// app.use(cors());
-app.use(express.static(__dirname + "/../client/dist/"));
+app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/review_id/", (req, res) => {
