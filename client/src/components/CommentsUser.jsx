@@ -1,4 +1,5 @@
 import React from "react";
+import css from "../style.css";
 export default class CommentsUser extends React.Component {
   constructor() {
     super();
@@ -17,12 +18,12 @@ export default class CommentsUser extends React.Component {
       userStars = "fiveStar ";
     }
     return (
-      <div className="reviewSection">
-        <div className="starandtime">
-          <div className={userStars} />
-          <div className="dateWritten">{this.props.data.date}</div>
+      <div className={css["reviewSection"]}>
+        <div className={css["starandtime"]}>
+          <div className={css[userStars]} />
+          <div className={css["dateWriteen"]}>{this.props.data.date}</div>
         </div>
-        <p className="userText">{this.props.data.comments}</p>
+        <p className={css["userText"]}>{this.props.data.comments}</p>
       </div>
     );
   }

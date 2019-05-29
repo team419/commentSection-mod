@@ -17,11 +17,26 @@ module.exports = {
             options: {}
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: "[sha1:hash:hex:9]"
+            }
+          }
+        ]
       }
     ]
   },
   output: {
     filename: "bundle.js",
-    path: __dirname + "/client/dist"
+    path: __dirname + "/public/dist"
   }
 };

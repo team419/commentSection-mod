@@ -4,6 +4,7 @@ import User from "./User.jsx";
 import CommentsUser from "./CommentsUser.jsx";
 import HelpfulBtn from "./HelpfulBtn.jsx";
 import user from "../../../exampleData.js";
+import css from "../style.css";
 
 export default class Comments extends React.Component {
   constructor(props) {
@@ -35,14 +36,14 @@ export default class Comments extends React.Component {
 
   render() {
     var items = this.state.repos.map(i => (
-      <div className="container">
-        <div className="profileSection">
+      <div className={css["container"]}>
+        <div className={css["profileSection"]}>
           <User data={i} />
         </div>
-        <div className="commentsSection">
+        <div className={css["commentsSection"]}>
           <CommentsUser data={i} />
         </div>
-        <div className="helpfulButtonSection">
+        <div className={css["helpfulButtonSection"]}>
           <HelpfulBtn data={i} />
         </div>
       </div>
