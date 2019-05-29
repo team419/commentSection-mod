@@ -11,23 +11,23 @@ class HelpfulBtn extends React.Component {
       show: false,
       click: 1
     };
-    this.handleClick1 = this.handleClick1.bind(this);
-    this.handleClick2 = this.handleClick2.bind(this);
-    this.handleClick3 = this.handleClick3.bind(this);
+    this.handleClickUseful = this.handleClickUseful.bind(this);
+    this.handleClickFunny = this.handleClickFunny.bind(this);
+    this.handleClickCool = this.handleClickCool.bind(this);
   }
-  handleClick1() {
+  handleClickUseful() {
     this.setState({
       value: "Thanks for your vote!",
       buttonUsefull: !this.state.buttonUsefull
     });
   }
-  handleClick2() {
+  handleClickFunny() {
     this.setState({
       value: "Thanks for your vote!",
       buttonFunny: !this.state.buttonFunny
     });
   }
-  handleClick3() {
+  handleClickCool() {
     this.setState({
       value: "Thanks for your vote!",
       buttonCool: !this.state.buttonCool,
@@ -41,7 +41,7 @@ class HelpfulBtn extends React.Component {
         <button
           type="submit"
           className={this.state.buttonUsefull ? "buttonTrue" : "buttonFalse"}
-          onClick={this.handleClick1}
+          onClick={this.handleClickUseful}
         >
           <svg height="16px" width="16px" viewBox="0 0 18 18">
             <path d="M9 17c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm2 8.392V12H7v-1.608a3.982 3.982 0 0 1-2-3.445 4 4 0 0 1 8 0c0 1.477-.81 2.752-2 3.445zM8 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm1.003 9.747h-.006A1.997 1.997 0 0 1 7 13h4a1.997 1.997 0 0 1-1.997 1.997z" />
@@ -53,7 +53,7 @@ class HelpfulBtn extends React.Component {
         <button
           type="submit"
           className={this.state.buttonFunny ? "buttonTrue" : "buttonFalse"}
-          onClick={this.handleClick2}
+          onClick={this.handleClickFunny}
         >
           <svg height="16px" width="16px" viewBox="0 0 18 18">
             <path d="M9 17c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12a4.87 4.87 0 0 1-4.787-4h9.574A4.87 4.87 0 0 1 9 14zm2.5-5.625a1.376 1.376 0 1 1 0-2.75 1.376 1.376 0 0 1 0 2.75zm-5 0a1.376 1.376 0 1 1 0-2.75 1.376 1.376 0 0 1 0 2.75z" />
@@ -65,7 +65,7 @@ class HelpfulBtn extends React.Component {
         <button
           type="submit"
           className={this.state.buttonCool ? "buttonTrue" : "buttonFalse"}
-          onClick={this.handleClick3}
+          onClick={this.handleClickCool}
         >
           <svg height="16px" width="16px" viewBox="0 0 18 18">
             <path d="M9 17c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm6.026 5.335C14.766 8.797 13.5 10 11.986 10h-.003c-1.218 0-2.282-.764-2.767-1.813-.088-.19-.344-.242-.432-.052C8.3 9.185 7.234 10 6.016 10h-.003C4.5 10 3.195 8.83 2.973 7.35l-.093-.84c-.053-.242.192-.51.477-.51h11.286c.294 0 .508.332.477.56l-.094.775zm-2.068 4.154A4.28 4.28 0 0 1 9 14.144a4.28 4.28 0 0 1-3.958-2.657A6.81 6.81 0 0 0 9 12.753a6.81 6.81 0 0 0 3.958-1.265z" />
