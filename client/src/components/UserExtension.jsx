@@ -1,12 +1,12 @@
 import React from "react";
 
-class OnHover extends React.Component {
+export default class UserExtension extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div border="1px solid width:50px">
+      <div>
         <ul className="onHov">
           <li>
             <svg
@@ -68,4 +68,3 @@ class OnHover extends React.Component {
     );
   }
 }
-export default OnHover;

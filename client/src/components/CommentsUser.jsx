@@ -27,4 +27,3 @@ export default class CommentsUser extends React.Component {
     );
   }
 }
-export default CommentsUser;

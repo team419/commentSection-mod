@@ -30,7 +30,7 @@ for (let i = 0; i < 5; i++) {
     numPhotos: faker.random.number({ min: 1, max: 501 }),
     elite: faker.random.boolean(),
     stars: faker.random.number({ min: 1, max: 5 }),
-    date: faker.date.between("2015-01-01", "2019-01-05"),
+    date: faker.date.between("01-31-2015", "01-31-2019"),
     comments: faker.lorem.sentences(7),
     userPicture: faker.image.avatar(),
     checkIn: faker.random.boolean()
