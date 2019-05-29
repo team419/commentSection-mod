@@ -1,6 +1,6 @@
 import React from "react";
-import UserExtension from "./UserExtension.jsx";
-import css from "../style.css";
+import UserExtension from "./UserExtension";
+import css from "../styles.css";
 
 export default class User extends React.Component {
   constructor(props) {

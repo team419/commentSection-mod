@@ -1,5 +1,5 @@
 import React from "react";
-import css from "../style.css";
+import css from "../styles.css";
 export default class HelpfulBtn extends React.Component {
   constructor() {
     super();
@@ -37,7 +37,7 @@ export default class HelpfulBtn extends React.Component {
   render() {
     return (
       <div>
-        <div className={css["thankyou"]}>{this.state.value}</div>
+        <div className={css["thankYou"]}>{this.state.value}</div>
         <button
           type="submit"
           className={this.state.buttonUsefull ? "buttonTrue" : "buttonFalse"}
