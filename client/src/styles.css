@@ -1,0 +1,212 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title main random"
+    "title button random";
+  margin-top: 15px;
+  border-bottom: 1px solid #999999;
+}
+.profileSection {
+  grid-area: title;
+}
+
+.helpfulButtonSection {
+  grid-area: button;
+}
+.commentsSection {
+  grid-area: main;
+}
+
+.userPic {
+  margin-top: 0px;
+  padding: 4px;
+}
+.onHov {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: white;
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  font-weight: bold;
+  font: inherit;
+  fill: white;
+  font-size: 13px;
+}
+.onHov li:hover {
+  text-decoration: underline;
+}
+.onHov:hover {
+  color: #0073bb;
+  list-style-type: none;
+  font-weight: bold;
+  fill: #0073bb;
+  font-size: 14px;
+}
+.svgOnHover {
+  height: 18px;
+  width: 18px;
+}
+.userPro {
+  margin-left: 20px;
+  margin-top: 0px;
+  padding: 4px;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+.userName {
+  color: #0073bb;
+  font-weight: bold;
+  font-size: 15px;
+}
+.location {
+  font-weight: bold;
+  font-size: 12px;
+}
+.userInfo {
+  color: #999999;
+  list-style-type: none;
+  margin: 3px;
+
+  font: inherit;
+  font-size: 12px;
+}
+.elite {
+  color: #f15c00;
+  /* font-weight: bold; */
+  margin-left: 41px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.buttonTrue {
+  font-size: 13px;
+  width: 88px;
+  height: 30px;
+  margin: 15px;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  border: 2px solid #cccccc;
+  /* display: flex;
+  align-items: center; */
+}
+
+.buttonFalse {
+  font-size: 13px;
+  width: 88px;
+  height: 30px;
+  margin: 15px;
+  background-color: #0073bb;
+  border: none;
+  font-weight: bold;
+  color: white;
+  fill: white;
+  border-radius: 4px;
+  transition: background-color 2.5s ease;
+  border: 0.5px solid #cccccc;
+  /* display: flex;
+  align-items: center; */
+}
+.styleButton {
+  display: flex;
+  align-items: center;
+}
+.svgIcon {
+  margin-right: 4px;
+  height: 16px;
+  width: 16px;
+}
+h5 {
+  color: #666666;
+  font-weight: bold;
+}
+
+.friendsIcon,
+.reviewIcon,
+.photoIcon {
+  fill: #f15c00;
+  padding: 1px;
+}
+.thankYou {
+  color: #666;
+  font: inherit;
+  font-weight: bold;
+}
+
+.dateWritten {
+  font: inherit;
+  color: #666;
+  font-size: 15px;
+}
+.userText {
+  font: inherit;
+  font-size: 14px;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.28571em;
+}
+.starsIcon {
+  margin-top: 0px;
+  height: 20px;
+  width: 100px;
+  float: left;
+}
+
+.userPic {
+  margin-top: 0px;
+  height: 60px;
+  width: 60px;
+  float: left;
+}
+text {
+  font-weight: bold;
+}
+
+.oneStar {
+  background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png)
+    top left no-repeat;
+  width: 102px;
+  height: 18px;
+  background-position: 0 -258px;
+}
+.twoStar {
+  background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png)
+    top left no-repeat;
+  width: 102px;
+  height: 18px;
+  background-position: 0 -294px;
+}
+.threeStar {
+  background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png)
+    top left no-repeat;
+  width: 102px;
+  height: 18px;
+  background-position: 0 -330px;
+}
+.fourStar {
+  background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png)
+    top left no-repeat;
+  width: 102px;
+  height: 18px;
+  background-position: 0 -366px;
+}
+.fiveStar {
+  background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png)
+    top left no-repeat;
+  width: 102px;
+  height: 18px;
+  background-position: 0 -402px;
+  background-size: 132px 560px;
+}
+
+.starandtime {
+  display: flex;
+}

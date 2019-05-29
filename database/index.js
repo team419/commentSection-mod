@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/reviews", { useNewUrlParser: true });
 const faker = require("faker");
-// mongoose will accept an array of objects
 
 let reviewSchema = mongoose.Schema({
-  resturantId: Number,
+  // restaurantId: Number,
   name: String,
   location: String,
   numFriends: Number,
@@ -21,30 +20,42 @@ const Review = mongoose.model("Review", reviewSchema);
 
 let user = [];
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 5; i++) {
   let userInfo = {
-    resturantId: i,
+    // restaurantId: i,
     name: faker.name.findName(),
-    location: faker.address.city(),
+    location: `${faker.address.city()} ${faker.address.stateAbbr()}`,
     numFriends: faker.random.number({ min: 1, max: 500 }),
     numReviews: faker.random.number({ min: 1, max: 500 }),
-    numPhotos: faker.random.number({ min: 1, max: 500 }),
+    numPhotos: faker.random.number({ min: 1, max: 501 }),
     elite: faker.random.boolean(),
-    stars: faker.random.number({ min: 1, max: 500 }),
-    date: faker.date.between("2015-01-01", "2019-01-05"),
-    comments: faker.lorem.sentences({ min: 3, max: 30 }),
+    stars: faker.random.number({ min: 1, max: 5 }),
+    date: faker.date.between("01-31-2015", "01-31-2019"),
+    comments: faker.lorem.sentences(7),
     userPicture: faker.image.avatar(),
     checkIn: faker.random.boolean()
   };
   user.push(userInfo);
 }
-console.log(user);
 
 Review.insertMany(user, function(error) {
   if (error) {
     console.log("error", error);
   } else {
-    console.log("sucessfully seeded");
-    mongoose.connection.close();
+    console.log("sucessfully seededs");
   }
 });
+var getComments = (restaurantId, callback) => {
+  Review.findOne({}, (err, data) => {
+    console.log(err, data);
+  });
+  Review.find({}, (err, results) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
+module.exports.getComments = getComments;
