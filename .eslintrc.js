@@ -8,5 +8,8 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true
+  },
+  rules: {
+    "dot-notation": 0
   }
 };
