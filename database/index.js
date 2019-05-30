@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/reviews", { useNewUrlParser: true });
-const faker = require("faker");
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true });
+const faker = require('faker');
 
 let reviewSchema = mongoose.Schema({
   // restaurantId: Number,
@@ -16,7 +16,7 @@ let reviewSchema = mongoose.Schema({
   userPicture: String,
   checkIn: Boolean
 });
-const Review = mongoose.model("Review", reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 let user = [];
 
@@ -30,7 +30,7 @@ for (let i = 0; i < 5; i++) {
     numPhotos: faker.random.number({ min: 1, max: 501 }),
     elite: faker.random.boolean(),
     stars: faker.random.number({ min: 1, max: 5 }),
-    date: faker.date.between("01-31-2015", "01-31-2019"),
+    date: faker.date.between('01-31-2015', '01-31-2019'),
     comments: faker.lorem.sentences(7),
     userPicture: faker.image.avatar(),
     checkIn: faker.random.boolean()
@@ -40,9 +40,9 @@ for (let i = 0; i < 5; i++) {
 
 Review.insertMany(user, function(error) {
   if (error) {
-    console.log("error", error);
+    console.log('error', error);
   } else {
-    console.log("sucessfully seededs");
+    console.log('sucessfully seededs');
   }
 });
 var getComments = (restaurantId, callback) => {

@@ -1,11 +1,10 @@
 import React from "react";
 import css from "../styles.css";
+// eslint-disable-next-line react/prefer-stateless-function
 export default class UserExtension extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
+      // eslint-disable-next-line react/jsx-filename-extension
       <div>
         <ul className={css["onHov"]}>
           <li>
