@@ -9,7 +9,7 @@ export default class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      repos: []
+      reviewsData: [], // weird variable name
     };
     this.getReviews = this.getReviews.bind(this);
   }
@@ -19,30 +19,36 @@ export default class Comments extends React.Component {
   }
 
   getReviews() {
+    // refactor later for rest_id
+    const rest_id = Math.floor(Math.random() * 100);
     axios
-      .get('/review_id')
-      .then(data => {
-        this.setState({ repos: data['data'] });
+      .get(`http://localhost:3001/api/restaurants/${rest_id}/reviews`)
+      .then((data) => {
+        this.setState({ reviewsData: data.data[0].reviews });
+
       })
-      .catch(err => {
-        // eslint-disable-next-line no-console
-        console.log(err);
+      .catch((err) => {
+        console.log('err: ' + err);
       });
   }
 
   render() {
-    const items = this.state.repos.map(i => (
-      <div className={css['container']}>
-        <div className={css['profileSection']}>
-          <User data={i} />
+    const { reviewsData } = this.state;
+    let items = [];
+    reviewsData.map(review => (
+      items.push(
+        <div className={css['container']}>
+          <div className={css['profileSection']}>
+            <User userData={review} />
+          </div>
+          <div className={css['commentsSection']}>
+            <CommentsUser userData={review} />
+          </div>
+          <div className={css['helpfulButtonSection']}>
+            <HelpfulBtn />
+          </div>
         </div>
-        <div className={css['commentsSection']}>
-          <CommentsUser data={i} />
-        </div>
-        <div className={css['helpfulButtonSection']}>
-          <HelpfulBtn data={i} />
-        </div>
-      </div>
+      )
     ));
     return <div>{items}</div>;
   }

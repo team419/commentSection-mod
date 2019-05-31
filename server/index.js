@@ -1,28 +1,49 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const db = require("../database/index.js");
+const express = require('express');
+// const db = require('../database/index.js');
+const { Review } = require('../database/dbconnector.js');
+// const bodyParser = require("body-parser");
+const cors = require('cors')
+//npm install body-parser
+//npm install cors
 
 let app = express();
+app.use(cors());
+app.use(express.static(__dirname + '/../public'));
 
-app.use(express.static(__dirname + "/../public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+// const getComments = (restaurantId, callback) => {
+//   Review.find({}, (err, results) => {
+//     if (err) {
+//       callback(err, null);
+//     } else {
+//       callback(null, results);
+//     }
+//   });
+// };
 
-app.get("/review_id/", (req, res) => {
+app.get('/api/restaurants/:id/reviews', (req, res) => {
   const restaurantId = req.params.id;
-
-  db.getComments(restaurantId, (err, results) => {
-    console.log(err, results);
+  Review.find({ rest_id: restaurantId }, (err, results) => {
     if (err) {
-      console.log("err");
+      res.status(500).send('fail to get data');
     } else {
       console.log(results);
       res.status(200).send(results);
-      console.log("successful GETs");
     }
   });
-});
-let port = 3001;
 
-app.listen(port, function() {
+  // const getComments(restaurantId, (err, results) => {
+  //   console.log(err, results);
+  //   if (err) {
+  //     res.sendStatus(500);
+  //   } else {
+  //     console.log(results);
+  //     res.status(200).send(results);
+  //     console.log('successful GETs');
+  //   }
+  // });
+});
+const port = 3001;
+
+app.listen(port, () => {
   console.log(`listening on ports ${port}`);
 });

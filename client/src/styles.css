@@ -6,8 +6,8 @@ body {
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "title main random"
-    "title button random";
+    'title main random'
+    'title button random';
   margin-top: 15px;
   border-bottom: 1px solid #999999;
 }
@@ -58,7 +58,7 @@ body {
   margin-left: 20px;
   margin-top: 0px;
   padding: 4px;
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: 'Helvetica Neue', Helvetica, Arial;
 }
 .userName {
   color: #0073bb;
@@ -118,6 +118,7 @@ body {
 .styleButton {
   display: flex;
   align-items: center;
+  text-align: center;
 }
 .svgIcon {
   margin-right: 4px;
@@ -140,6 +141,11 @@ h5 {
   font: inherit;
   font-weight: bold;
 }
+.afterVote {
+  color: #41A700;
+  font: inherit;
+  font-weight: bold;
+}
 
 .dateWritten {
   font: inherit;
@@ -150,7 +156,7 @@ h5 {
   font: inherit;
   font-size: 14px;
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.28571em;
 }
 .starsIcon {
