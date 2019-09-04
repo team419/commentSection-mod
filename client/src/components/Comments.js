@@ -24,7 +24,6 @@ export default class Comments extends React.Component {
       .get(`http://localhost:3001/api/restaurants/${rest_id}/reviews`)
       .then((data) => {
         this.setState({ reviewsData: data.data[0].reviews });
-
       })
       .catch((err) => {
         console.log('err: ' + err);
