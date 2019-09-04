@@ -9,7 +9,7 @@ export default class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviewsData: [], // weird variable name
+      reviewsData: [], 
     };
     this.getReviews = this.getReviews.bind(this);
   }
