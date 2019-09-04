@@ -19,7 +19,6 @@ export default class Comments extends React.Component {
   }
 
   getReviews() {
-    // refactor later for rest_id
     const rest_id = Math.floor(Math.random() * 100);
     axios
       .get(`http://localhost:3001/api/restaurants/${rest_id}/reviews`)
