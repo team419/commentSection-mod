@@ -1,10 +1,6 @@
 const express = require('express');
-// const db = require('../database/index.js');
 const { Review } = require('../database/dbconnector.js');
-// const bodyParser = require("body-parser");
 const cors = require('cors')
-//npm install body-parser
-//npm install cors
 
 let app = express();
 app.use(cors());
