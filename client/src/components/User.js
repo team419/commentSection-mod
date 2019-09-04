@@ -2,10 +2,8 @@ import React from 'react';
 import UserExtension from './UserExtension';
 import css from '../styles.css';
 
-// this shouldn't be a class component, but rather a functional-stateless
 const User = (props) => {
   const { userData } = props;
-
   return (
     <div>
       <div>
